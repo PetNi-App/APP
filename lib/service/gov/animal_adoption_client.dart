@@ -15,8 +15,12 @@ class AnimalAdoptionClient {
   final Client client;
 
   Future<Iterable<AnimalAdoption>> get() async {
-    final response = await client.get(url);
+    final response = await _get();
     final iterable = jsonDecode(response.body) as List;
     return iterable.map((e) => AnimalAdoption.fromJson(e));
   }
+
+  Future<String> getJson() => _get().then((value) => value.body);
+
+  Future<Response> _get() => client.get(url);
 }
