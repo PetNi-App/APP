@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_ni/utils/breakpoint.dart';
+import 'package:pet_ni/components/navigation_bar.dart';
 
 class FakeHomePage extends StatelessWidget {
   const FakeHomePage({Key? key}) : super(key: key);
@@ -20,11 +21,6 @@ class FakeHomePage extends StatelessWidget {
         break;
     }
 
-    return Image.asset(
-      image,
-      fit: BoxFit.contain,
-      height: double.infinity,
-      alignment: Alignment.center,
-    );
+    return Scaffold(body: MyNavigationBar());
   }
 }
