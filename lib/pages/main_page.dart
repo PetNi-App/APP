@@ -20,7 +20,9 @@ class MainPage extends StatelessWidget {
               title: SvgPicture.asset(MySvgs.logo),
               actions: [
                 SizedBox(
-                  width: 470 / 5 * 5,
+                  // 每個項目的寬度 = 470 / 5
+                  // NavigationBar 規定至少要有 3 個項目
+                  width: 470 / 5 * 3,
                   child: MyNavigationBar(),
                 )
               ],
